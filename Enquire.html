@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Entry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #00ffcc;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      width: 350px;
+      backdrop-filter: blur(15px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    form:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+      color: #fff;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: border 0.3s, background 0.3s;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    input:focus, select:focus {
+      border-color: #00ffcc;
+      outline: none;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+      background-color: #d11c1c;
+      color: rgb(187, 84, 84);
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #bb1b1b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+      background-color: #a51010;
+    }
+
+    .instagram-id {
+      display: none; /* Hide by default */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cheap Game Seller</h1>
+
+  <form action="https://formspree.io/f/mjvngerp" method="POST" id="form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="contact">Phone Number:</label>
+    <input type="text" id="contact" name="contact" placeholder="Enter your Phone Number" required>
+
+    <label for="game">Game Name (Which you want to buy):</label>
+    <select id="game" name="game" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="Gta V">Gta V</option>
+      <option value="Cyberpunk 2077">Cyberpunk 2077</option>
+      <option value="Call of Duty Modern Warfare 3">Call of Duty Modern Warfare 3</option>
+      <option value="Palworld">Palworld</option>
+      <option value="Witcher 3">Witcher 3</option>
+      <option value="Forza Horizon 5">Forza Horizon 5</option>
+    </select>
+
+    <label for="contact-method">Preferred Contact Method:</label>
+    <select id="contact-method" name="contact-method" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="instagram">Instagram</option>
+      <option value="call">Call</option>
+    </select>
+
+    <div class="instagram-id" id="instagram-id-container">
+      <label for="instagram-id">Instagram ID:</label>
+      <input type="text" id="instagram-id" name="instagram-id" placeholder="Enter your Instagram ID">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const contactMethodSelect = document.getElementById('contact-method');
+    const instagramIdContainer = document.getElementById('instagram-id-container');
+
+    contactMethodSelect.addEventListener('change', function() {
+      if (this.value === 'instagram') {
+        instagramIdContainer.style.display = 'block'; // Show Instagram ID input
+      } else {
+        instagramIdContainer.style.display = 'none'; // Hide Instagram ID input
+      }
+    });
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      var name = document.getElementById('name').value;
+      var contact = document.getElementById('contact').value;
+      var game = document.getElementById('game').value;
+      var contactMethod = document.getElementById('contact-method').value;
+      var instagramId = document.getElementById('instagram-id').value;
+
+      alert('Name: ' + name + '\nPhone Number: ' + contact + '\nGame: ' + game + '\nPreferred Contact: ' + contactMethod + (contactMethod === 'instagram' ? '\nInstagram ID: ' + instagramId : ''));
+      this.submit(); // Now submit the form
+    });
+  </script>
+</body>
+</html>

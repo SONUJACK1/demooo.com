@@ -1,0 +1,219 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.product {
+  background-color: #33001a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #3a0101;
+  text-align: center;
+  margin: 10px;
+  
+}
+
+.product img {
+  width: 7cm;
+  height: 250px; /* Adjust as needed */
+  border-radius: 10px;
+}
+
+.product h5 {
+  font-size: 1cm;
+  margin-top: -0.20cm;
+}
+
+button {
+  background-color: #001e1fc2;
+  color: rgb(115, 88, 138);
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  
+}
+
+button:hover {
+  background-color: #a04545;
+}
+
+.fa-star {
+  color: rgb(85, 73, 3);
+  font-size: 2px;
+}
+.curved {
+  display: flex; /* Use flexbox to arrange items in a row */
+  gap: 20px; /* Add some gap between each category menu */
+  justify-content: space-around; /* Distribute items evenly with space around */
+  color: rgb(48, 1, 59); /* Change the color to your desired color */
+  font-size: 24px; /* Change the font size to your desired size */
+  
+}
+
+
+
+
+.body {
+  width: 100px;
+  height: 100pw;
+  margin: 0;
+  overflow: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  text-align: center;
+  margin: 20px;
+}
+
+.add-to-cart-btn {
+  /* background-color:  #ffffff; */
+  color: rgb(112, 7, 7);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: left;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  background-color: #d8d8d8; /* Fallback background color */
+   /* Hide overflow to prevent scrolling */
+}
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the iframe is behind other content */
+}
+
+.animation iframe {
+  width: 100vw; /* Adjust to viewport width */
+  height: 100vh; /* Adjust to viewport height */
+  border: none;
+}
+.category-menu-container {
+  display: flex; /* Use flexbox to arrange items in a row */
+  gap: 20px; /* Add some gap between each category menu */
+  justify-content: space-around; /* Distribute items evenly with space around */
+  border: 15px solid rgb(34, 1, 26); /* Green border around the container */
+  border-style: groove;
+  padding: 10px; /* Padding inside the container */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow for animation */
+}
+
+.category-menu-container::before,
+.category-menu-container::after {
+  content: ""; /* Empty content for pseudo-elements */
+  position: absolute; /* Position absolute for pseudo-elements */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(31, 29, 32, 0.8), transparent); /* Gradient for ray effect */
+  animation: raysMove 5s linear infinite; /* Animation properties */
+}
+
+.category-menu-container::before {
+  left: -100%; /* Start off-screen to the left */
+}
+
+.category-menu-container::after {
+  right: -100%; /* Start off-screen to the right */
+}
+
+@keyframes raysMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.category-menu {
+  list-style-type: none; /* Remove default list styling */
+  text-align: center; /* Center-align text within each menu */
+  font-size: 40px;
+}
+
+/* Common style for all category menus */
+.category-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.category-menu ul li {
+  display: inline-block; /* Display items in a line */
+}
+
+.category-menu a {
+  display: block; /* Make the links block-level for padding and background */
+  padding: 10px; /* Add padding around each link */
+  background-color: #24070c; /* Green background color */
+  color: rgb(131, 126, 126); /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.category-menu a:hover {
+  background-color: #446264; /* Darker green on hover */
+}
+
+
+
+
+
+
+  
+  
+
+.gun1 {
+  /* border: 1px solid rgb(7, 6, 6); /* Corrected to 'solid' */
+  height: 2cm;
+  width: 2cm;
+  display: flex; /* Added for centering */
+  justify-content: flex-end; /* Change to position horizontally */
+  align-items: 2cm; /* Change to position vertically */
+}
+
+.gun1 img {
+  max-width: 100%; /* Ensures the image doesn't exceed the container */
+  height: 4cm; /* Maintains aspect ratio */
+  width: 100%; /* Makes sure the image takes up the full width of its container */
+  
+  margin-left: 1200px; /* Move image x cm down */
+}
+.flash-animation {
+  animation: flash 8s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
